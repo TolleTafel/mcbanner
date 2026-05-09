@@ -8,7 +8,7 @@
 //! 
 //! fn main() {
 //!     let mut banner = Banner::new(MCColor::Red);
-//!     banner.add_pattern(Pattern::Bricks, MCColor::Orange);
+//!     banner.add_pattern(Pattern::FieldMasoned, MCColor::Orange);
 //!     banner.render();
 //!     banner.save("banner.png").unwrap();
 //! }
@@ -35,7 +35,7 @@ mod test {
     #[test]
     fn test_banner_with_pattern() {
         let mut banner = Banner::new(crate::colors::MCColor::Lime);
-        banner.add_pattern(crate::patterns::Pattern::Creeper, crate::colors::MCColor::Black);
+        banner.add_pattern(crate::patterns::Pattern::CreeperCharge, crate::colors::MCColor::Black);
         banner.render();
         banner.save("banner.png").unwrap();
     }
