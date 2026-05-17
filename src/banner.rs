@@ -28,6 +28,12 @@ impl Banner {
         self
     }
 
+    /// Changes the pattern and color at the given index.
+    pub fn change_pattern(&mut self, index: usize, pattern: Pattern, color: MCColor) -> &mut Self {
+        self.patterns[index] = (pattern, color);
+        self
+    }
+
     /// Renders the banner image.
     pub fn render(&mut self) -> &mut Self {
         self.render_base();
