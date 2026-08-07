@@ -2,7 +2,7 @@
 name = "mcbanner"
 description = "A simple library to generate Minecraft banner images."
 authors = ["Carlos González"]
-version = "0.1.1"
+version = "2.0.0"
 edition = "2021"
 readme = "README.md"
 license = "MIT"

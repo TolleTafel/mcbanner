@@ -29,8 +29,12 @@ impl Banner {
     }
 
     /// Changes the pattern and color at the given index.
+    ///
+    /// Does nothing if the index is out of bounds.
     pub fn change_pattern(&mut self, index: usize, pattern: Pattern, color: MCColor) -> &mut Self {
-        self.patterns[index] = (pattern, color);
+        if let Some(item) = self.patterns.get_mut(index) {
+            *item = (pattern, color);
+        }
         self
     }
 
