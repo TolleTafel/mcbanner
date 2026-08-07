@@ -8,6 +8,7 @@ use rust_embed::RustEmbed;
 struct Asset;
 
 /// Represents a pattern for a Minecraft banner.
+#[derive(Clone, Copy, PartialEq, Eq)]
 pub enum Pattern {
     Base,
     BaseDexterCanton,
@@ -54,6 +55,24 @@ pub enum Pattern {
 }
 
 impl Pattern {
+    pub fn all() -> Vec<Pattern> {
+        vec![
+            Pattern::Base, Pattern::BaseDexterCanton, Pattern::BaseGradient,
+            Pattern::BaseIndented, Pattern::BaseSinisterCanton, Pattern::Bend,
+            Pattern::BendSinister, Pattern::Bordure, Pattern::BordureIndented,
+            Pattern::Chevron, Pattern::Chief, Pattern::ChiefDexterCanton,
+            Pattern::ChiefIndented, Pattern::ChiefSinisterCanton, Pattern::CreeperCharge,
+            Pattern::Cross, Pattern::Fess, Pattern::FieldMasoned, Pattern::Flow,
+            Pattern::FlowerCharge, Pattern::Globe, Pattern::Gradient, Pattern::Guster,
+            Pattern::InvertedChevron, Pattern::Lozenge, Pattern::Pale, Pattern::PaleDexter,
+            Pattern::PaleSinister, Pattern::Paly, Pattern::PerBend, Pattern::PerBendInverted,
+            Pattern::PerBendSinister, Pattern::PerBendSinisterInverted, Pattern::PerFess,
+            Pattern::PerFessInverted, Pattern::PerPale, Pattern::PerPaleInverted,
+            Pattern::Rounded, Pattern::Saltire, Pattern::SkullCharge, Pattern::Snout,
+            Pattern::Thing,
+        ]
+    }
+
     fn asset_name(&self) -> String {
         match self {
             Pattern::Base => "base.png",

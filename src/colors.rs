@@ -1,4 +1,5 @@
 /// Minecraft dye colors.
+#[derive(Clone, Copy, PartialEq, Eq)]
 pub enum MCColor {
     White,
     LightGray,
@@ -20,6 +21,15 @@ pub enum MCColor {
 
 impl MCColor {
     /// Returns the RGB representation of the color.
+    pub fn all() -> Vec<MCColor> {
+        vec![
+            MCColor::White, MCColor::LightGray, MCColor::Gray, MCColor::Black,
+            MCColor::Brown, MCColor::Red, MCColor::Orange, MCColor::Yellow,
+            MCColor::Lime, MCColor::Green, MCColor::Cyan, MCColor::LightBlue,
+            MCColor::Blue, MCColor::Purple, MCColor::Magenta, MCColor::Pink,
+        ]
+    }
+
     pub fn rgb(&self) -> [u8; 3] {
         match self {
             MCColor::White => [249, 255, 254],
